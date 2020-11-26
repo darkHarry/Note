@@ -1,0 +1,157 @@
+:root {
+  --text-grey: #112;
+  --light-text-grey: #99a;
+  --background-grey: #ddd;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Indie Flower", cursive;
+  font-size: 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background: rgb(72,209,255);
+}
+
+.title {
+  text-align: center;
+}
+
+.title > h1 {
+  padding: 20px 0 0 0;
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.title > p {
+  font-size: 1.1rem;
+  text-decoration: underline;
+  margin: 0;
+}
+
+main {
+  max-width: 2000px;
+  padding: 0 80px;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  width: 60vw;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+#input-note {
+  resize: none;
+  padding: 10px;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--text-grey);
+  font-weight: bolder;
+  border: none;
+}
+
+#submit-btn {
+  align-self: flex-end;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 5px 15px;
+  background: #fff;
+}
+
+#submit-btn:hover {
+  background: var(--background-grey);
+}
+
+#submit-btn:active {
+  background: var(--light-text-grey);
+}
+
+.notes {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+} 
+
+.note {
+  background: #fff;  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.25fr;
+  height: 12rem;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+.note > button {
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.note > button:hover {
+  background: var(--background-grey);
+}
+
+.note > button:active {
+  background: var(--light-text-grey);
+}
+
+.note-text {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  padding: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note > time {
+  font-size: 0.75rem;
+  color: var(--light-text-grey);
+  font-family: sans-serif;
+  padding: 5px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+footer {
+  background: var(--background-grey);
+  align-self: stretch;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 10px 0;
+}
+
+
