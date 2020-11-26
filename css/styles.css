@@ -30,7 +30,6 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  background: rgb(72,209,255);
 }
 
 .title {
@@ -84,7 +83,7 @@ main {
   border: none;
   border-radius: 5px;
   font-size: 0.9rem;
-  padding: 5px 15px;
+  padding: 10px 15px;
   background: #fff;
 }
 
@@ -116,7 +115,6 @@ main {
 .note > button {
   background: #fff;
   border: none;
-  border-radius: 5px;
   font-size: 0.9rem;
 }
 
@@ -126,6 +124,14 @@ main {
 
 .note > button:active {
   background: var(--light-text-grey);
+}
+
+.note > button:first-of-type {
+  border-radius: 0 0 0 10px;
+}
+
+.note > button:last-of-type {
+  border-radius: 0 0 10px 0;
 }
 
 .note-text {
