@@ -59,6 +59,7 @@ button:active {
 }
 
 main {
+  width: 100vw;
   max-width: 2000px;
   padding: 0 80px;
   display: flex;
@@ -68,7 +69,8 @@ main {
 }
 
 .input {
-  width: 60vw;
+  width: 70%;
+  min-width: 20rem;
   max-width: 30rem;
   display: flex;
   flex-direction: column;
@@ -150,4 +152,12 @@ footer {
   padding: 10px 0;
 }
 
+@media (max-width: 360px) {
+  .input {
+    min-width: 18rem;
+  }
 
+  .notes {
+    grid-template-columns: 18rem;
+  }
+}
