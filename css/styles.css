@@ -135,14 +135,12 @@ main {
 }
 
 .note-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
   grid-column: 1 / -1;
   grid-row: 2 / 3;
   padding: 0 1.15rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: bolder;
 }
 
 .note > time {
