@@ -21,11 +21,13 @@ class Note {
             this.note.appendChild(child);
         }
 
+        // create a background color for note
+        const color = `hsl(${Math.ceil(360*Math.random())},${Math.ceil(71*Math.random())+24}%,${Math.ceil(11*Math.random())+84}%)`;
+        this.note.style.backgroundColor = color;
+
         deleteBtn.addEventListener("click", () => {
             this.note.parentElement.removeChild(this.note);
         });
-
-
     }
 }
 

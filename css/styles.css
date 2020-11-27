@@ -1,7 +1,8 @@
 :root {
   --text-grey: #112;
   --light-text-grey: #99a;
-  --background-grey: #ddd;
+  --button-hover: rgba(0,0,0,0.2);
+  --button-active: rgba(0,0,0,0.5);
 }
 
 html {
@@ -19,8 +20,17 @@ body {
   min-height: 100vh;
 }
 
+button {
+  background: transparent;
+}
+
 button:hover {
   cursor: pointer;
+  background: var(--button-hover);
+}
+
+button:active {
+  background: var(--button-active);
 }
 
 .wrapper {
@@ -84,15 +94,6 @@ main {
   border-radius: 5px;
   font-size: 0.9rem;
   padding: 10px 15px;
-  background: #fff;
-}
-
-#submit-btn:hover {
-  background: var(--background-grey);
-}
-
-#submit-btn:active {
-  background: var(--light-text-grey);
 }
 
 .notes {
@@ -102,7 +103,6 @@ main {
 } 
 
 .note {
-  background: #fff;  
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.1fr 1fr 0.25fr;
@@ -113,17 +113,8 @@ main {
 
 .note > button {
   grid-row: 3 / -1;
-  background: #fff;
   border: none;
   font-size: 0.9rem;
-}
-
-.note > button:hover {
-  background: var(--background-grey);
-}
-
-.note > button:active {
-  background: var(--light-text-grey);
 }
 
 .note > button:first-of-type {
