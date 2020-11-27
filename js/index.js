@@ -17,7 +17,7 @@ class Note {
 
         this.note = document.createElement("div");
         this.note.classList.add("note");
-        for (let child of [textEle, timeEle, editBtn, deleteBtn]) {
+        for (let child of [timeEle, textEle,editBtn, deleteBtn]) {
             this.note.appendChild(child);
         }
 

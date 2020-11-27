@@ -105,14 +105,14 @@ main {
   background: #fff;  
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 0.25fr;
-  height: 12rem;
-  position: relative;
+  grid-template-rows: 0.1fr 1fr 0.25fr;
+  height: 13rem;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 .note > button {
+  grid-row: 3 / -1;
   background: #fff;
   border: none;
   font-size: 0.9rem;
@@ -135,21 +135,23 @@ main {
 }
 
 .note-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
   grid-column: 1 / -1;
-  grid-row: 1 / 2;
-  padding: 20px;
+  grid-row: 2 / 3;
+  padding: 0 1.15rem;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .note > time {
+  grid-column: 2 / -1;
+  justify-self: end;
   font-size: 0.75rem;
   color: var(--light-text-grey);
   font-family: sans-serif;
   padding: 5px 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 footer {
