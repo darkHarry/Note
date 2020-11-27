@@ -43,12 +43,12 @@ class Notes {
     }
 }
 
-const seperateLines = function(text) {
-    return text.split("\n").join("</br>");
+const removeDivs = function(text) {
+    return text.split("<div>").join("");
 }
 
 const processText = function(text) {
-    const processedText = seperateLines(text);
+    const processedText = removeDivs(text);
     return processedText;
 }
 
@@ -56,12 +56,18 @@ document.addEventListener(
     "DOMContentLoaded",
     function() {
         let notes = new Notes();
-        const inputForm = document.querySelector("#input-note");
+        const inputForm = document.querySelector(".input-text");
         const submitBtn = document.querySelector("#submit-btn");
+
         submitBtn.addEventListener("click", function() {
-            if (inputForm.value) {
-                notes.add(processText(inputForm.value));
-            }
+            notes.add(processText(inputForm.innerHTML));
         }); 
+
+        inputForm.addEventListener("focusout", function(event) {
+            console.log(inputForm.innerHTML);
+            if (/^<br>$/.test(inputForm.innerHTML)) {
+                inputForm.innerHTML = "";
+            }
+        });
     }
 );
