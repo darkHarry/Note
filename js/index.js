@@ -1,7 +1,7 @@
 class Note {
     constructor(text) {
         const textEle = document.createElement("div");
-        textEle.appendChild(document.createTextNode(text));
+        textEle.innerHTML = text;
         textEle.classList.add("note-text");
 
         const timeEle = document.createElement("time");
@@ -43,6 +43,15 @@ class Notes {
     }
 }
 
+const seperateLines = function(text) {
+    return text.split("\n").join("</br>");
+}
+
+const processText = function(text) {
+    const processedText = seperateLines(text);
+    return processedText;
+}
+
 document.addEventListener(
     "DOMContentLoaded",
     function() {
@@ -51,7 +60,7 @@ document.addEventListener(
         const submitBtn = document.querySelector("#submit-btn");
         submitBtn.addEventListener("click", function() {
             if (inputForm.value) {
-                notes.add(inputForm.value);
+                notes.add(processText(inputForm.value));
             }
         }); 
     }
