@@ -85,6 +85,10 @@ main {
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
+.hidden {
+  height: 0;
+}
+
 .input-title {
   color: var(--text-grey);
   font-family: inherit;
@@ -96,13 +100,12 @@ main {
 
 .input-text {
   color: var(--text-grey);
-  font-weight: bolder;
   overflow-wrap: break-word;
   padding: 0 5px;
 }
 
 .input-title::placeholder {
-  color: var(--text-grey);
+  color: var(--light-text-grey);
 }
 
 .input-text[contenteditable=true]:empty::before {
@@ -127,7 +130,7 @@ main {
 .note {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.1fr 0.2fr 1fr 0.30fr;
+  grid-template-rows: 1fr 1.1fr 4fr 1.5fr;
   height: 13rem;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -163,7 +166,6 @@ main {
   padding: 0 1.15rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: bolder;
 }
 
 .note > time {

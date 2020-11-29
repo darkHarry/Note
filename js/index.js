@@ -26,7 +26,7 @@ class Note {
         }
 
         // create a background color for note
-        const color = `hsl(${Math.ceil(360*Math.random())},${Math.ceil(71*Math.random())+24}%,${Math.ceil(11*Math.random())+84}%)`;
+        const color = `hsl(${Math.ceil(360*Math.random())},${Math.ceil(71*Math.random())+24}%,${Math.ceil(11*Math.random())+80}%)`;
         this.note.style.backgroundColor = color;
 
         deleteBtn.addEventListener("click", () => {
@@ -67,6 +67,10 @@ document.addEventListener(
         submitBtn.addEventListener("click", function() {
             notes.add(titleInput.value, processText(textInput.innerHTML));
         }); 
+
+        textInput.addEventListener("focus", function(event) {
+            titleInput.classList.remove("hidden");
+        });
 
         textInput.addEventListener("focusout", function(event) {
             if (/^<br>$/.test(textInput.innerHTML)) {
