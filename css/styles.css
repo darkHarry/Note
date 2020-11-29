@@ -85,11 +85,24 @@ main {
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
+.input-title {
+  color: var(--text-grey);
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  padding: 0 5px;
+}
+
 .input-text {
-  padding: 10px;
   color: var(--text-grey);
   font-weight: bolder;
   overflow-wrap: break-word;
+  padding: 0 5px;
+}
+
+.input-title::placeholder {
+  color: var(--text-grey);
 }
 
 .input-text[contenteditable=true]:empty::before {
@@ -114,14 +127,14 @@ main {
 .note {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0.1fr 1fr 0.25fr;
+  grid-template-rows: 0.1fr 0.2fr 1fr 0.30fr;
   height: 13rem;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 .note > button {
-  grid-row: 3 / -1;
+  grid-row: 4 / -1;
   border: none;
   font-size: 0.9rem;
 }
@@ -134,9 +147,19 @@ main {
   border-radius: 0 0 10px 0;
 }
 
-.note-text {
+.note-title {
   grid-column: 1 / -1;
   grid-row: 2 / 3;
+  padding: 0 1.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.note-text {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
   padding: 0 1.15rem;
   overflow: hidden;
   text-overflow: ellipsis;

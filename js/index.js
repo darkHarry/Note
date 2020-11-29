@@ -1,7 +1,11 @@
 class Note {
-    constructor(text) {
+    constructor(title, text) {
+        const titleEle = document.createElement("div"); 
         const textEle = document.createElement("div");
+
+        titleEle.innerHTML = title;
         textEle.innerHTML = text;
+        titleEle.classList.add("note-title");
         textEle.classList.add("note-text");
 
         const timeEle = document.createElement("time");
@@ -17,7 +21,7 @@ class Note {
 
         this.note = document.createElement("div");
         this.note.classList.add("note");
-        for (let child of [timeEle, textEle,editBtn, deleteBtn]) {
+        for (let child of [timeEle, titleEle, textEle,editBtn, deleteBtn]) {
             this.note.appendChild(child);
         }
 
@@ -37,8 +41,8 @@ class Notes {
         this.notes = document.querySelector(".notes");
     }
 
-    add(text) {
-        const newNote = new Note(text);
+    add(title, text) {
+        const newNote = new Note(title, text);
         this.notes.prepend(newNote.note);
     }
 }
@@ -56,17 +60,17 @@ document.addEventListener(
     "DOMContentLoaded",
     function() {
         let notes = new Notes();
-        const inputForm = document.querySelector(".input-text");
+        const titleInput = document.querySelector(".input-title");
+        const textInput = document.querySelector(".input-text");
         const submitBtn = document.querySelector("#submit-btn");
 
         submitBtn.addEventListener("click", function() {
-            notes.add(processText(inputForm.innerHTML));
+            notes.add(titleInput.value, processText(textInput.innerHTML));
         }); 
 
-        inputForm.addEventListener("focusout", function(event) {
-            console.log(inputForm.innerHTML);
-            if (/^<br>$/.test(inputForm.innerHTML)) {
-                inputForm.innerHTML = "";
+        textInput.addEventListener("focusout", function(event) {
+            if (/^<br>$/.test(textInput.innerHTML)) {
+                textInput.innerHTML = "";
             }
         });
     }
