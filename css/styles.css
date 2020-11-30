@@ -37,6 +37,17 @@ button:active {
   background: var(--button-active);
 }
 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0,0,0,0.5);
+}
+
 .wrapper {
   display: flex;
   gap: 20px;
@@ -96,12 +107,17 @@ main {
   font-size: 1.2rem;
   border: none;
   padding: 0 5px;
+  background: transparent;
 }
 
 .input-text {
+  border: none;
+  font-family: inherit;
   color: var(--text-grey);
   overflow-wrap: break-word;
+  white-space: pre-wrap;
   padding: 0 5px;
+  background: transparent;
 }
 
 .input-title::placeholder {
@@ -113,7 +129,7 @@ main {
   color: var(--light-text-grey);
 }
 
-#submit-btn {
+.submit-btn {
   align-self: flex-end;
   border: none;
   border-radius: 5px;
@@ -125,52 +141,74 @@ main {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  width: 100%;
 } 
 
 .note {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1.1fr 4fr 1.5fr;
+  display: flex;
+  flex-direction: column;
   height: 13rem;
   border-radius: 10px;
+  box-shadow: 0 0 1px rgba(0,0,0,0.8);
+}
+
+.note:hover {
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
-.note > button {
-  grid-row: 4 / -1;
-  border: none;
-  font-size: 0.9rem;
+.note-overlay {
+  width: 60vw;
+  height: 80vh;
+  position: fixed;
+  margin-top: -40vh;
+  margin-left: -30vw;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
 }
 
-.note > button:first-of-type {
+.note-btns {
+  display: flex;
+}
+
+.note-btns > button {
+  flex: 1;
+  border: none;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+.note-btns > button:first-child {
   border-radius: 0 0 0 10px;
 }
 
-.note > button:last-of-type {
+.note-btns > button:last-child {
   border-radius: 0 0 10px 0;
 }
 
 .note-title {
-  grid-column: 1 / -1;
-  grid-row: 2 / 3;
   padding: 0 1.15rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-family: inherit;
   font-weight: bold;
   font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  color: var(--text-grey);
 }
 
 .note-text {
-  grid-column: 1 / -1;
-  grid-row: 3 / 4;
+  flex: 1;
   padding: 0 1.15rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-family: inherit;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-grey);
+  border: none;
+  resize: none;
 }
 
 .note > time {
-  grid-column: 2 / -1;
-  justify-self: end;
+  align-self: flex-end;
   font-size: 0.75rem;
   color: var(--light-text-grey);
   font-family: sans-serif;
@@ -182,6 +220,17 @@ footer {
   text-align: center;
   font-size: 1.1rem;
   padding: 10px 0;
+}
+
+@media (max-width: 800px) {
+  .note-overlay {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 360px) {

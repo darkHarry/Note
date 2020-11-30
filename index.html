@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
 </head>
 <body>
+  <div class="overlay"></div>
   <div class="wrapper">
     <header class="title">
       <h1>Notes</h1>
@@ -18,9 +19,10 @@
       <section class="input">
         <input type="text" placeholder="Title" maxlength="25" class="input-title hidden">
         <span class="input-text" role="textarea" placeholder="Take note here..." contenteditable="true"></span>
-        <button id="submit-btn" type="submit">Done</button>
+        <button class="submit-btn" type="submit">Done</button>
       </section>
-      <section class="notes"></section>
+      <section class="notes">
+      </section>
     </main>
     <footer>
       Made by <a href="https://github.com/darkHarry">Harry S. Mecwan</a>
