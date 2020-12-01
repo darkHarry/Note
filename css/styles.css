@@ -7,12 +7,13 @@
 
 html {
   box-sizing: border-box;
-  font-family: "Indie Flower", cursive;
-  font-size: 18px;
+  font-family: "Gamja Flower", cursive;
+  font-size: 20px;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
+  font-size: inherit;
 }
 
 *:focus {
