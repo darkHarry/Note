@@ -89,7 +89,6 @@ main {
   min-width: 20rem;
   max-width: 30rem;
   display: flex;
-  gap: 5px;
   flex-direction: column;
   padding: 10px 10px;
   background: #fff;
@@ -134,8 +133,7 @@ main {
   align-self: flex-end;
   border: none;
   border-radius: 5px;
-  font-size: 0.9rem;
-  padding: 10px 15px;
+  padding: 5px 10px;
 }
 
 .notes {
@@ -175,7 +173,6 @@ main {
 .note-btns > button {
   flex: 1;
   border: none;
-  font-size: 0.9rem;
   padding: 10px;
 }
 
