@@ -17,9 +17,13 @@ class Note {
 
         // Create card addition timestamp
         const timeEle = document.createElement("time");
+        const timeIcon = document.createElement("span");
+        timeIcon.classList.add("material-icons");
+        timeIcon.innerHTML = "calendar_today";
         const time = new Date();
         timeEle.setAttribute("datetime", time.toUTCString());
-        timeEle.innerHTML = time.toUTCString().split(" ").slice(0, 4).join(" ");
+        timeEle.appendChild(timeIcon);
+        timeEle.innerHTML += time.toUTCString().split(" ").slice(0, 4).join(" ");
 
         // create card button elements
         const btns = document.createElement("div");

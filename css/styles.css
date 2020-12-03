@@ -136,6 +136,10 @@ main {
   padding: 5px 10px;
 }
 
+.submit-btn > span {
+  font-size: 1.5rem;
+}
+
 .notes {
   display: grid;
   gap: 10px;
@@ -207,10 +211,17 @@ main {
 
 .note > time {
   align-self: flex-end;
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
   font-size: 0.75rem;
   color: var(--light-text-grey);
   font-family: sans-serif;
   padding: 5px 10px;
+}
+
+time > span {
+  font-size: 1rem !important;
 }
 
 footer {
